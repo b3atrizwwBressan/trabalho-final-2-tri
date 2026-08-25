@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-
+ 
 body { 
   display: flex; 
   flex-direction: column; 
@@ -10,7 +10,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 } 
-
+ 
 .cabecalho { 
   background-color: #7e3e1c; 
   padding: 15px 25px; 
@@ -18,44 +18,44 @@ body {
   justify-content: space-between; 
   align-items: center; 
 } 
-
+ 
 .cabecalho-link { 
   color: #fff; 
   text-decoration: none; 
 } 
-
+ 
 /* corrigido: h1 só fica branco DENTRO do cabeçalho, senão some no fundo claro */
 .cabecalho h1 { 
   color: #fff; 
   font-size: 24px; 
   margin: 0;
 } 
-
+ 
 main { 
   flex: 1; 
   padding: 24px;
 } 
-
+ 
 main h2 {
   color: #4a3123;
   font-weight: normal;
   margin-bottom: 20px;
 }
-
+ 
 section { 
   display: flex; 
   flex-wrap: wrap;
   gap: 16px; 
 } 
-
+ 
 /* ESTILOS DO FLASHCARD */
-
+ 
 .cartao {
   width: 260px;
   height: 220px;
   perspective: 1000px; /* Efeito 3D de profundidade */
 }
-
+ 
 .cartao-interno { 
   position: relative; 
   width: 100%;
@@ -63,7 +63,7 @@ section {
   transition: transform 0.8s; 
   transform-style: preserve-3d; 
 } 
-
+ 
 .cartao-frente, 
 .cartao-verso { 
   position: absolute; 
@@ -77,7 +77,7 @@ section {
   flex-direction: column;
   overflow: hidden;
 } 
-
+ 
 .cartao-frente p,
 .cartao-verso p {
   margin: 0;
@@ -86,15 +86,20 @@ section {
   line-height: 1.4;
   color: #333;
 }
-
+ 
 .cartao-verso { 
   transform: rotateY(180deg); 
 } 
-
-.cartao:hover .cartao-interno { 
+ 
+.cartao:hover .cartao-interno,
+.cartao.virado .cartao-interno { 
   transform: rotateY(180deg); 
 } 
-
+ 
+.cartao {
+  cursor: pointer;
+}
+ 
 .cartao-imagem {
   width: 100%;
   height: 120px;
@@ -103,13 +108,13 @@ section {
   flex-shrink: 0;
   line-height: 0;
 }
-
+ 
 .cartao-imagem svg {
   width: 100%;
   height: 100%;
   display: block;
 }
-
+ 
 .cartao-selo {
   position: absolute;
   top: 8px;
@@ -121,22 +126,22 @@ section {
   padding: 4px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
-
+ 
 /* uma faixinha colorida do lado do texto, pra dar o feedback visual de certo/errado */
 .cartao-mentira {
   border-left: 5px solid #e63946;
 }
-
+ 
 .cartao-verdade {
   border-left: 5px solid #52b788;
 }
-
+ 
 footer { 
   background-color: #7e3e1c; 
   padding: 15px 25px; 
   color: #fff; 
 }
-
+ 
 footer p {
   margin: 0;
 }
