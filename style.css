@@ -1,8 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 body { 
   display: flex; 
   flex-direction: column; 
   min-height: 100vh; 
   background-color: #f5f2f2; 
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 } 
 
 .cabecalho { 
@@ -18,17 +24,27 @@ body {
   text-decoration: none; 
 } 
 
-h1 { 
+/* corrigido: h1 só fica branco DENTRO do cabeçalho, senão some no fundo claro */
+.cabecalho h1 { 
   color: #fff; 
   font-size: 24px; 
+  margin: 0;
 } 
 
 main { 
   flex: 1; 
+  padding: 24px;
 } 
+
+main h2 {
+  color: #4a3123;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
 
 section { 
   display: flex; 
+  flex-wrap: wrap;
   gap: 16px; 
 } 
 
@@ -36,7 +52,7 @@ section {
 
 .cartao {
   width: 260px;
-  height: 200px;
+  height: 220px;
   perspective: 1000px; /* Efeito 3D de profundidade */
 }
 
@@ -57,7 +73,19 @@ section {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
   backface-visibility: hidden; 
   background-color: #fff; /* Fundo branco para o conteúdo não ficar transparente */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 } 
+
+.cartao-frente p,
+.cartao-verso p {
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+}
 
 .cartao-verso { 
   transform: rotateY(180deg); 
@@ -67,15 +95,34 @@ section {
   transform: rotateY(180deg); 
 } 
 
+/* antes era <img class="cartao-imagem">; aqui viraram blocos coloridos com ícone,
+   pra não depender de fotos externas que podem quebrar o link */
 .cartao-imagem {
   width: 100%;
   height: 120px;
-  object-fit: cover;
   border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  flex-shrink: 0;
 }
+
+.cartao-imagem--luz      { background: linear-gradient(135deg, #ffd166, #f4a300); }
+.cartao-imagem--espelho  { background: linear-gradient(135deg, #90caf9, #5c9ded); }
+.cartao-imagem--fenomeno { background: linear-gradient(135deg, #f78fb3, #a78bfa); }
+.cartao-imagem--lente    { background: linear-gradient(135deg, #80cbc4, #4fb3a9); }
+.cartao-imagem--olho     { background: linear-gradient(135deg, #c9b0f0, #9575cd); }
+
+.cartao-verdade .cartao-imagem { background: #52b788; color: #fff; }
+.cartao-mentira .cartao-imagem { background: #e63946; color: #fff; }
 
 footer { 
   background-color: #7e3e1c; 
   padding: 15px 25px; 
   color: #fff; 
+}
+
+footer p {
+  margin: 0;
 }
