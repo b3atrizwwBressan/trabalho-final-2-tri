@@ -1,128 +1,95 @@
-* {
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Flashcards de Óptica - Mitos e Verdades</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <h1>Óptica: Verdade ou Mentira?</h1>
+    </header>
 
-body { 
-  display: flex; 
-  flex-direction: column; 
-  min-height: 100vh; 
-  background-color: #f5f2f2; 
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-} 
+    <main>
+      <h2>Passe o mouse sobre os cartões para descobrir a verdade</h2>
+      <section class="cartoes">
 
-.cabecalho { 
-  background-color: #7e3e1c; 
-  padding: 15px 25px; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-} 
+        <!-- 1. Propriedades da luz -->
+        <article class="cartao">
+          <div class="cartao-interno">
+            <div class="cartao-frente cartao-mentira">
+              <div class="cartao-imagem cartao-imagem--luz">✘</div>
+              <p>A velocidade da luz é sempre a mesma, não importa o meio em que ela se propaga.</p>
+            </div>
+            <div class="cartao-verso cartao-verdade">
+              <div class="cartao-imagem cartao-imagem--luz">✔</div>
+              <p> A luz se propaga mais rápido no vácuo. Em meios materiais como água e vidro, ela se propaga mais devagar (é o que causa a <strong>refração</strong>).</p>
+            </div>
+          </div>
+        </article>
 
-.cabecalho-link { 
-  color: #fff; 
-  text-decoration: none; 
-} 
+        <!-- 2. Reflexão e espelhos -->
+        <article class="cartao">
+          <div class="cartao-interno">
+            <div class="cartao-frente cartao-mentira">
+              <div class="cartao-imagem cartao-imagem--espelho">✘</div>
+              <p>Em um espelho plano, a imagem formada é sempre maior que o objeto.</p>
+            </div>
+            <div class="cartao-verso cartao-verdade">
+              <div class="cartao-imagem cartao-imagem--espelho">✔</div>
+              <p> No espelho plano a imagem é <strong>virtual, direita e do mesmo tamanho</strong> do objeto.</p>
+            </div>
+          </div>
+        </article>
 
-/* corrigido: h1 só fica branco DENTRO do cabeçalho, senão some no fundo claro */
-.cabecalho h1 { 
-  color: #fff; 
-  font-size: 24px; 
-  margin: 0;
-} 
+        <!-- 3. Fenômenos da luz -->
+        <article class="cartao">
+          <div class="cartao-interno">
+            <div class="cartao-frente cartao-mentira">
+              <div class="cartao-imagem cartao-imagem--fenomeno">✘</div>
+              <p>O arco-íris se forma porque a luz é absorvida pelas gotas de água da chuva.</p>
+            </div>
+            <div class="cartao-verso cartao-verdade">
+              <div class="cartao-imagem cartao-imagem--fenomeno">✔</div>
+              <p>A luz sofre <strong>reflexão e refração</strong> dentro das gotas, decompondo a luz branca em várias cores.</p>
+            </div>
+          </div>
+        </article>
 
-main { 
-  flex: 1; 
-  padding: 24px;
-} 
+        <!-- 4. Lentes -->
+        <article class="cartao">
+          <div class="cartao-interno">
+            <div class="cartao-frente cartao-mentira">
+              <div class="cartao-imagem cartao-imagem--lente">✘</div>
+              <p>Lentes convergentes sempre formam imagens virtuais.</p>
+            </div>
+            <div class="cartao-verso cartao-verdade">
+              <div class="cartao-imagem cartao-imagem--lente">✔</div>
+              <p>Lentes convergentes podem formar imagens <strong>reais ou virtuais</strong>, dependendo da posição do objeto em relação à lente.</p>
+            </div>
+          </div>
+        </article>
 
-main h2 {
-  color: #4a3123;
-  font-weight: normal;
-  margin-bottom: 20px;
-}
+        <!-- 5. Óptica do corpo humano -->
+        <article class="cartao">
+          <div class="cartao-interno">
+            <div class="cartao-frente cartao-mentira">
+              <div class="cartao-imagem cartao-imagem--olho">✘</div>
+              <p>O cristalino do olho humano é uma estrutura rígida que não muda de forma.</p>
+            </div>
+            <div class="cartao-verso cartao-verdade">
+              <div class="cartao-imagem cartao-imagem--olho">✔</div>
+              <p> O cristalino muda de forma graças aos <strong>músculos ciliares</strong>, ajustando o foco em um processo chamado acomodação visual.</p>
+            </div>
+          </div>
+        </article>
 
-section { 
-  display: flex; 
-  flex-wrap: wrap;
-  gap: 16px; 
-} 
+      </section>
+    </main>
 
-/* ESTILOS DO FLASHCARD */
-
-.cartao {
-  width: 260px;
-  height: 220px;
-  perspective: 1000px; /* Efeito 3D de profundidade */
-}
-
-.cartao-interno { 
-  position: relative; 
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s; 
-  transform-style: preserve-3d; 
-} 
-
-.cartao-frente, 
-.cartao-verso { 
-  position: absolute; 
-  width: 100%;
-  height: 100%;
-  border-radius: 12px; 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
-  backface-visibility: hidden; 
-  background-color: #fff; /* Fundo branco para o conteúdo não ficar transparente */
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-} 
-
-.cartao-frente p,
-.cartao-verso p {
-  margin: 0;
-  padding: 10px 14px;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #333;
-}
-
-.cartao-verso { 
-  transform: rotateY(180deg); 
-} 
-
-.cartao:hover .cartao-interno { 
-  transform: rotateY(180deg); 
-} 
-
-/* antes era <img class="cartao-imagem">; aqui viraram blocos coloridos com ícone,
-   pra não depender de fotos externas que podem quebrar o link */
-.cartao-imagem {
-  width: 100%;
-  height: 120px;
-  border-radius: 12px 12px 0 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.8rem;
-  flex-shrink: 0;
-}
-
-.cartao-imagem--luz      { background: linear-gradient(135deg, #ffd166, #f4a300); }
-.cartao-imagem--espelho  { background: linear-gradient(135deg, #90caf9, #5c9ded); }
-.cartao-imagem--fenomeno { background: linear-gradient(135deg, #f78fb3, #a78bfa); }
-.cartao-imagem--lente    { background: linear-gradient(135deg, #80cbc4, #4fb3a9); }
-.cartao-imagem--olho     { background: linear-gradient(135deg, #c9b0f0, #9575cd); }
-
-.cartao-verdade .cartao-imagem { background: #52b788; color: #fff; }
-.cartao-mentira .cartao-imagem { background: #e63946; color: #fff; }
-
-footer { 
-  background-color: #7e3e1c; 
-  padding: 15px 25px; 
-  color: #fff; 
-}
-
-footer p {
-  margin: 0;
-}
+    <footer>
+      <p>Projeto feito por Beatriz Bressan</p>
+    </footer>
+  </body>
+</html>
