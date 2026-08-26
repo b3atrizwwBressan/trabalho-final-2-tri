@@ -6,13 +6,13 @@ body {
   display: flex; 
   flex-direction: column; 
   min-height: 100vh; 
-  background-color: #f5f2f2; 
+  background-color: #817a7a97; 
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 } 
  
 .cabecalho { 
-  background-color: #7e3e1c; 
+  background-color: #930a95; 
   padding: 15px 25px; 
   display: flex; 
   justify-content: space-between; 
@@ -24,7 +24,7 @@ body {
   text-decoration: none; 
 } 
  
-/* corrigido: h1 só fica branco DENTRO do cabeçalho, senão some no fundo claro */
+
 .cabecalho h1 { 
   color: #fff; 
   font-size: 24px; 
@@ -48,12 +48,12 @@ section {
   gap: 16px; 
 } 
  
-/* ESTILOS DO FLASHCARD */
+
  
 .cartao {
   width: 260px;
   height: 220px;
-  perspective: 1000px; /* Efeito 3D de profundidade */
+  perspective: 1000px; 
 }
  
 .cartao-interno { 
@@ -72,7 +72,7 @@ section {
   border-radius: 12px; 
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
   backface-visibility: hidden; 
-  background-color: #fff; /* Fundo branco para o conteúdo não ficar transparente */
+  background-color: #fff; 
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -100,24 +100,24 @@ section {
   cursor: pointer;
 }
  
-/* Container da imagem no topo do cartão */
+
 .cartao-imagem {
   width: 100%;
-  height: 110px; /* Altura do espaço reservado para a imagem */
+  height: 110px; 
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   flex-shrink: 0;
-  background-color: #f9f9f9; /* Fundo suave caso a imagem não ocupe tudo */
+  background-color: #f9f9f9;
   border-radius: 12px 12px 0 0;
 }
 
-/* Regra para ajustar a tag <img> dentro da div */
+
 .cartao-imagem img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Preenche a área perfeitamente sem distorcer */
+  object-fit: cover; 
 }
 
 /* Regra caso você use <svg> */
@@ -139,7 +139,7 @@ section {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
  
-/* uma faixinha colorida do lado do texto, pra dar o feedback visual de certo/errado */
+
 .cartao-mentira {
   border-left: 5px solid #e63946;
 }
