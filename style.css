@@ -100,28 +100,32 @@ section {
   cursor: pointer;
 }
  
+/* Container da imagem no topo do cartão */
 .cartao-imagem {
   width: 100%;
-  height: 120px;
-  border-radius: 12px 12px 0 0;
+  height: 110px; /* Altura do espaço reservado para a imagem */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   flex-shrink: 0;
-  line-height: 0;
-  width: 100px; /* Largura desejada */
-  height: 100px; /* Altura desejada */
-  object-fit: contain; /* Ajusta a imagem dentro do espaço sem cortar */
+  background-color: #f9f9f9; /* Fundo suave caso a imagem não ocupe tudo */
+  border-radius: 12px 12px 0 0;
 }
 
- 
+/* Regra para ajustar a tag <img> dentro da div */
+.cartao-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Preenche a área perfeitamente sem distorcer */
+}
+
+/* Regra caso você use <svg> */
 .cartao-imagem svg {
   width: 100%;
   height: 100%;
   display: block;
-  width: 100px; /* Largura desejada */
-  height: 100px; /* Altura desejada */
-  object-fit: contain; /* Ajusta a imagem dentro do espaço sem cortar */
 }
-
  
 .cartao-selo {
   position: absolute;
