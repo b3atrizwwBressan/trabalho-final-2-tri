@@ -6,7 +6,7 @@ body {
   display: flex; 
   flex-direction: column; 
   min-height: 100vh; 
-  background-color: #817a7a97; 
+  background-color: #3d373e97; 
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 } 
@@ -37,7 +37,7 @@ main {
 } 
  
 main h2 {
-  color: #4a3123;
+  color: #ffffff;
   font-weight: normal;
   margin-bottom: 20px;
 }
@@ -149,7 +149,7 @@ section {
 }
  
 footer { 
-  background-color: #7e3e1c; 
+  background-color: #870f8e; 
   padding: 15px 25px; 
   color: #fff; 
 }
