@@ -107,13 +107,21 @@ section {
   overflow: hidden;
   flex-shrink: 0;
   line-height: 0;
+  width: 100px; /* Largura desejada */
+  height: 100px; /* Altura desejada */
+  object-fit: contain; /* Ajusta a imagem dentro do espaço sem cortar */
 }
+
  
 .cartao-imagem svg {
   width: 100%;
   height: 100%;
   display: block;
+  width: 100px; /* Largura desejada */
+  height: 100px; /* Altura desejada */
+  object-fit: contain; /* Ajusta a imagem dentro do espaço sem cortar */
 }
+
  
 .cartao-selo {
   position: absolute;
