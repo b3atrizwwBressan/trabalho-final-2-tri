@@ -72,7 +72,7 @@ section {
   border-radius: 12px; 
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
   backface-visibility: hidden; 
-  background-color: #fff; 
+  background-color: #fff172; 
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -109,7 +109,7 @@ section {
   align-items: center;
   overflow: hidden;
   flex-shrink: 0;
-  background-color: #f9f9f9;
+  background-color: #f9fb7e;
   border-radius: 12px 12px 0 0;
 }
 
