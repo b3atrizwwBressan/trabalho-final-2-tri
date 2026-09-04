@@ -3,31 +3,31 @@
 }
 
 body {
+  margin: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   background-color: #ad5225fa;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
 }
 
 .cabecalho {
-  background-color: #f47aab;
   padding: 15px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.cabecalho-link {
-  color: #fff;
-  text-decoration: none;
+  background-color: #f47aab;
 }
 
 .cabecalho h1 {
-  color: #fff;
-  font-size: 24px;
   margin: 0;
+  color: white;
+  font-size: 24px;
+}
+
+.cabecalho-link {
+  color: white;
+  text-decoration: none;
 }
 
 main {
@@ -36,9 +36,9 @@ main {
 }
 
 main h2 {
-  color: #ffffff;
-  font-weight: normal;
   margin-bottom: 20px;
+  color: white;
+  font-weight: normal;
 }
 
 section {
@@ -46,6 +46,8 @@ section {
   flex-wrap: wrap;
   gap: 16px;
 }
+
+/* CARTÕES */
 
 .cartao {
   width: 260px;
@@ -67,56 +69,27 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  backface-visibility: hidden;
-  background-color: #fff172;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  border-radius: 12px;
+  border-left: 5px solid #f8eb71;
+  background-color: #fff172;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  backface-visibility: hidden;
 }
 
-/* TEXTO DOS CARTÕES */
-.cartao-frente p,
-.cartao-verso p {
-  margin: 0;
-  padding: 10px 14px;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #333;
-
-  /* Impede o texto de passar do cartão */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
-/* Frente */
-.cartao-frente p {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Verso */
 .cartao-verso {
   transform: rotateY(180deg);
 }
 
-.cartao-verso p {
-  flex: 1;
-  overflow-y: auto;
-  text-align: center;
-}
-
-/* Efeito de virar */
 .cartao:hover .cartao-interno,
 .cartao.virado .cartao-interno {
   transform: rotateY(180deg);
 }
 
-/* Imagens */
+/* IMAGENS */
+
 .cartao-imagem {
   width: 100%;
   height: 110px;
@@ -135,37 +108,32 @@ section {
   object-fit: cover;
 }
 
-.cartao-imagem svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+/* TEXTO */
+
+.cartao-frente p,
+.cartao-verso p {
+  margin: 0;
+  padding: 10px 14px;
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: break-word;
 }
 
-/* Selo */
-.cartao-selo {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: #fff;
-  padding: 4px;
-  box-shadow: 0 2px 6px rgba(200, 97, 46, 0.685);
+.cartao-frente p {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cartao-mentira {
-  border-left: 5px solid #f8eb71;
-}
-
-.cartao-verdade {
-  border-left: 5px solid #f8eb71;
-}
+/* RODAPÉ */
 
 footer {
-  background-color: #d68238ca;
   padding: 15px 25px;
-  color: #fff;
+  color: white;
+  background-color: #d68238ca;
 }
 
 footer p {
