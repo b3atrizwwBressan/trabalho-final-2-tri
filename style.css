@@ -1,83 +1,82 @@
 * {
   box-sizing: border-box;
 }
- 
-body { 
-  display: flex; 
-  flex-direction: column; 
-  min-height: 100vh; 
-  background-color: #ad5225fa; 
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ad5225fa;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-} 
- 
-.cabecalho { 
-  background-color: #f47aab; 
-  padding: 15px 25px; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-} 
- 
-.cabecalho-link { 
-  color: #fff; 
-  text-decoration: none; 
-} 
- 
+}
 
-.cabecalho h1 { 
-  color: #fff; 
-  font-size: 24px; 
+.cabecalho {
+  background-color: #f47aab;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cabecalho-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.cabecalho h1 {
+  color: #fff;
+  font-size: 24px;
   margin: 0;
-} 
- 
-main { 
-  flex: 1; 
+}
+
+main {
+  flex: 1;
   padding: 24px;
-} 
- 
+}
+
 main h2 {
   color: #ffffff;
   font-weight: normal;
   margin-bottom: 20px;
 }
- 
-section { 
-  display: flex; 
-  flex-wrap: wrap;
-  gap: 16px; 
-} 
- 
 
- 
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .cartao {
   width: 260px;
   height: 220px;
-  perspective: 1000px; 
+  perspective: 1000px;
+  cursor: pointer;
 }
- 
-.cartao-interno { 
-  position: relative; 
+
+.cartao-interno {
+  position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s; 
-  transform-style: preserve-3d; 
-} 
- 
-.cartao-frente, 
-.cartao-verso { 
-  position: absolute; 
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cartao-frente,
+.cartao-verso {
+  position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 12px; 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
-  backface-visibility: hidden; 
-  background-color: #fff172; 
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  backface-visibility: hidden;
+  background-color: #fff172;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-} 
- 
+}
+
+/* TEXTO DOS CARTÕES */
 .cartao-frente p,
 .cartao-verso p {
   margin: 0;
@@ -85,25 +84,42 @@ section {
   font-size: 0.9rem;
   line-height: 1.4;
   color: #333;
-}
- 
-.cartao-verso { 
-  transform: rotateY(180deg); 
-} 
- 
-.cartao:hover .cartao-interno,
-.cartao.virado .cartao-interno { 
-  transform: rotateY(180deg); 
-} 
- 
-.cartao {
-  cursor: pointer;
-}
- 
 
+  /* Impede o texto de passar do cartão */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Frente */
+.cartao-frente p {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Verso */
+.cartao-verso {
+  transform: rotateY(180deg);
+}
+
+.cartao-verso p {
+  flex: 1;
+  overflow-y: auto;
+  text-align: center;
+}
+
+/* Efeito de virar */
+.cartao:hover .cartao-interno,
+.cartao.virado .cartao-interno {
+  transform: rotateY(180deg);
+}
+
+/* Imagens */
 .cartao-imagem {
   width: 100%;
-  height: 110px; 
+  height: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,20 +129,19 @@ section {
   border-radius: 12px 12px 0 0;
 }
 
-
 .cartao-imagem img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
-/* Regra caso você use <svg> */
 .cartao-imagem svg {
   width: 100%;
   height: 100%;
   display: block;
 }
- 
+
+/* Selo */
 .cartao-selo {
   position: absolute;
   top: 8px;
@@ -138,22 +153,21 @@ section {
   padding: 4px;
   box-shadow: 0 2px 6px rgba(200, 97, 46, 0.685);
 }
- 
 
 .cartao-mentira {
   border-left: 5px solid #f8eb71;
 }
- 
+
 .cartao-verdade {
   border-left: 5px solid #f8eb71;
 }
- 
-footer { 
-  background-color: #d68238ca; 
-  padding: 15px 25px; 
-  color: #fff; 
+
+footer {
+  background-color: #d68238ca;
+  padding: 15px 25px;
+  color: #fff;
 }
- 
+
 footer p {
   margin: 0;
 }
